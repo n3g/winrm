@@ -102,6 +102,11 @@ func (c *Client) sendRequest(request *soap.SoapMessage) (string, error) {
 	return c.http.Post(c, request)
 }
 
+// SendRequest exec the custom http func from the client
+func (c *Client) SendRequest(request *soap.SoapMessage) (string, error) {
+	return c.http.Post(c, request)
+}
+
 // Run will run command on the the remote host, writing the process stdout and stderr to
 // the given writers. Note with this method it isn't possible to inject stdin.
 func (c *Client) Run(command string, stdout io.Writer, stderr io.Writer) (int, error) {
