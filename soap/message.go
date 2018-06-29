@@ -33,6 +33,19 @@ func NewMessage() (message *SoapMessage) {
 	return
 }
 
+func NewMessageWithNamespaces(namespaces []dom.Namespace) (message *SoapMessage) {
+	doc := dom.CreateDocument()
+	e := dom.CreateElement("Envelope")
+	doc.SetRoot(e)
+	for _, ns := range namespaces {
+		e.DeclareNamespace(ns)
+	}
+	DOM_NS_SOAP_ENV.SetTo(e)
+
+	message = &SoapMessage{document: doc, envelope: e}
+	return
+}
+
 func (message *SoapMessage) NewBody() (body *dom.Element) {
 	body = dom.CreateElement("Body")
 	message.envelope.AddChild(body)

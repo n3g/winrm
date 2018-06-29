@@ -10,7 +10,7 @@ import (
 	"github.com/masterzen/azure-sdk-for-go/core/http"
 	"github.com/masterzen/azure-sdk-for-go/core/tls"
 
-	"github.com/masterzen/winrm/soap"
+	"github.com/n3g/winrm/soap"
 )
 
 type ClientAuthRequest struct {

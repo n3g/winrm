@@ -17,6 +17,8 @@ const (
 	NS_SCHEMA_INST = "http://www.w3.org/2001/XMLSchema-instance"
 	NS_WIN_SHELL   = "http://schemas.microsoft.com/wbem/wsman/1/windows/shell"
 	NS_WSMAN_FAULT = "http://schemas.microsoft.com/wbem/wsman/1/wsmanfault"
+	NS_WSMAN_ID    = "http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd"
+	NS_EVENTING    = "http://schemas.xmlsoap.org/ws/2004/08/eventing"
 )
 
 // Namespace Prefixes
@@ -31,6 +33,8 @@ const (
 	NSP_SCHEMA_INST = "xsi"
 	NSP_WIN_SHELL   = "rsp"
 	NSP_WSMAN_FAULT = "f"
+	NSP_WSMAN_ID    = "wsmid"
+	NSP_EVENTING    = "e"
 )
 
 // DOM Namespaces
@@ -45,6 +49,8 @@ var (
 	DOM_NS_SCHEMA_INST = dom.Namespace{"xsi", "http://www.w3.org/2001/XMLSchema-instance"}
 	DOM_NS_WIN_SHELL   = dom.Namespace{"rsp", "http://schemas.microsoft.com/wbem/wsman/1/windows/shell"}
 	DOM_NS_WSMAN_FAULT = dom.Namespace{"f", "http://schemas.microsoft.com/wbem/wsman/1/wsmanfault"}
+	DOM_NS_WSMAN_ID    = dom.Namespace{"wsmid", "http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd"}
+	DOM_NS_EVENTING    = dom.Namespace{"e", "http://schemas.xmlsoap.org/ws/2004/08/eventing"}
 )
 
 var MostUsed = [...]dom.Namespace{
@@ -53,6 +59,7 @@ var MostUsed = [...]dom.Namespace{
 	DOM_NS_WIN_SHELL,
 	DOM_NS_WSMAN_DMTF,
 	DOM_NS_WSMAN_MSFT,
+	DOM_NS_WSMAN_ID,
 }
 
 func AddUsualNamespaces(node *dom.Element) {

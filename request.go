@@ -3,7 +3,7 @@ package winrm
 import (
 	"encoding/base64"
 
-	"github.com/masterzen/winrm/soap"
+	"github.com/n3g/winrm/soap"
 	"github.com/nu7hatch/gouuid"
 )
 
